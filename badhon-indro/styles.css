@@ -1,4 +1,3 @@
-/* Reset default styles */
 * {
     margin: 0;
     padding: 0;
@@ -49,6 +48,34 @@ body {
 }
 
 .social-sidebar a:hover {
+    color: #ff4d6d;
+    transform: scale(1.5);
+}
+
+/* Online Judge Sidebar */
+.cp-sidebar img {
+    height: 30px;
+    width: 30pxpx;
+    border-radius: 50%;
+}
+.cp-sidebar {
+    position: fixed;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    z-index: 100;
+}
+
+.cp-sidebar a {
+    color: #a0a0a0;
+    font-size: 1.5rem;
+    transition: color 0.3s, transform 0.5s;
+}
+
+.cp-sidebar a:hover {
     color: #ff4d6d;
     transform: scale(1.5);
 }
@@ -189,7 +216,7 @@ nav ul li a.active {
     height: 350px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #ff4d6d;
+    border: 5px solid #e32f50;
     box-shadow: 0 0 20px rgba(255, 77, 109, 0.9);
     transition: transform 0.5s ease-in-out;
 }
@@ -326,6 +353,7 @@ nav ul li a.active {
 .work-section {
     background: linear-gradient(135deg, #1a1a3b 0%, #0d0d1f 100%);
     text-align: center;
+    padding-top: 100px;
 }
 
 .work-section h2 {
@@ -459,7 +487,7 @@ nav ul li a.active {
 .contact-section textarea {
     width: 100%;
     padding: 15px;
-    border: 1px solid #444;
+    border: 1px solid #757575;
     border-radius: 5px;
     margin-bottom: 20px;
     background: #2a2a5a;
@@ -478,17 +506,21 @@ nav ul li a.active {
 }
 
 .contact-section button {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
     background: linear-gradient(90deg, #ff4d6d, #4d96ff);
     color: #fff;
-    padding: 10px 30px;
+    padding: 15px 30px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: transform 0.5s;
+    transition: transform 0.4s;
 }
 
 .contact-section button:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
 
 .contact-details {
@@ -557,7 +589,7 @@ footer {
 }
 
 .slideUp {
-    animation: slideUp 1s ease-in-out;
+    animation: slideUp 1.25s ease-in-out;
 }
 
 
@@ -565,6 +597,9 @@ footer {
 @media (max-width: 1000px) {
     .social-sidebar {
         left: 20px;
+    }
+    .cp-sidebar {
+        right: 20px;
     }
 }
 
@@ -590,8 +625,23 @@ footer {
     .social-sidebar {
         top: auto;
         bottom: 50px;
-        left: 50%;
+        left: 25%;
         transform: translateX(-50%);
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .cp-sidebar img{
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+    }
+
+    .cp-sidebar {
+        top: auto;
+        bottom: 50px;
+        right: 25%;
+        transform: translateX(50%);
         flex-direction: row;
         gap: 30px;
     }
@@ -673,5 +723,10 @@ footer {
 
     .social-sidebar a {
         font-size: 1.2rem;
+    }
+
+    .cp-sidebar img{
+        height: 20px;
+        width: 20px;
     }
 }
